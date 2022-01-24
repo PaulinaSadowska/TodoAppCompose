@@ -59,7 +59,7 @@ fun TaskRadioButton(
                 } else {
                     Icons.Default.RadioButtonUnchecked
                 },
-                contentDescription = "dupa",
+                contentDescription = "radio button",
                 tint = radioColor,
                 modifier = Modifier.size(buttonSize)
         )
