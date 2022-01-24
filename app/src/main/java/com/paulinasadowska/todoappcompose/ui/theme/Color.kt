@@ -6,8 +6,8 @@ val Blue = Color(0xFF3F68D5)
 val LightBlue = Color(0xFF4BA6EC)
 
 //Dark theme
-val GrayBackground = Color(0xFF242329)
-val GrayCard = Color(0xFF171719)
+val GrayBackground = Color(0xFF171719)
+val GrayCard = Color(0xFF242329)
 val OffWhite = Color(0xFFE9ECEF)
 val RedLighter = Color(0xFFEB7D55)
 val TealLighter = Color(0xFF8BEEF1)
