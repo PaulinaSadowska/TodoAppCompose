@@ -1,6 +1,7 @@
 package com.paulinasadowska.todoappcompose.tasks.ui
 
 import android.content.res.Configuration
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
@@ -11,8 +12,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.paulinasadowska.todoappcompose.ui.theme.TodoAppComposeTheme
@@ -25,22 +24,34 @@ fun TaskItem(
     val (selected, setSelected) = remember { mutableStateOf(false) }
     Card(
             modifier = modifier.fillMaxWidth(),
-            shape = RoundedCornerShape(24.dp),
+            shape = RoundedCornerShape(12.dp),
             elevation = 0.dp
     ) {
         Row(
-                modifier = Modifier.padding(all = 12.dp),
                 verticalAlignment = Alignment.CenterVertically
         ) {
-            TaskRadioButton(
-                    selected = selected,
-                    onClick = { setSelected(!selected) },
+            Box(
+                    modifier = Modifier
+                            .width(12.dp)
+                            .height(60.dp)
+                            .background(MaterialTheme.colors.primary)
             )
-            Spacer(modifier = Modifier.width(8.dp))
-            Text(
-                    text = task,
-            )
+            Row(
+                    modifier = Modifier
+                            .padding(top = 12.dp, bottom = 12.dp, end = 12.dp, start = 4.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+            ) {
+                TaskRadioButton(
+                        selected = selected,
+                        onClick = { setSelected(!selected) },
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Text(
+                        text = task,
+                )
+            }
         }
+
     }
 }
 
