@@ -12,6 +12,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.paulinasadowska.todoappcompose.ui.theme.TodoAppComposeTheme
@@ -19,7 +20,8 @@ import com.paulinasadowska.todoappcompose.ui.theme.TodoAppComposeTheme
 @Composable
 fun TaskItem(
         modifier: Modifier = Modifier,
-        task: String
+        task: String,
+        categoryColor: Color = MaterialTheme.colors.primary
 ) {
     val (selected, setSelected) = remember { mutableStateOf(false) }
     Card(
@@ -34,7 +36,7 @@ fun TaskItem(
                     modifier = Modifier
                             .width(12.dp)
                             .height(60.dp)
-                            .background(MaterialTheme.colors.primary)
+                            .background(categoryColor)
             )
             Row(
                     modifier = Modifier
@@ -51,7 +53,6 @@ fun TaskItem(
                 )
             }
         }
-
     }
 }
 
